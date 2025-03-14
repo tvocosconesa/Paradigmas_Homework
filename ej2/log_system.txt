@@ -1,0 +1,5 @@
+[DEBUG]<hola>
+[ERROR]<hola>
+[WARNING]<holap>
+[CRITICAL]<hola>
+[DEBUG]<testing testing 1 2 1 2 >

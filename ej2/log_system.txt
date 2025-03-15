@@ -3,3 +3,9 @@
 [WARNING]<holap>
 [CRITICAL]<hola>
 [DEBUG]<testing testing 1 2 1 2 >
+[ERROR]<>
+[ERROR]<>
+[ERROR] -> file: uca se comio las galletas / Line: 0 <>
+[ERROR]<>
+[ERROR] -> file: luca.txt / Line: 123 <luca>
+[ERROR] -> file: lucardo.txt / Line: 1234 <luca se comio las galletas>

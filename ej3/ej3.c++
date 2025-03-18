@@ -54,6 +54,7 @@ bool push_back(List* list, int value){
         list->head = new_node;
     }
     list->tail = new_node;
+    list ->size++;
     return true;
 }
 
@@ -67,11 +68,12 @@ bool insert(List* list, int value, int n) {
     if (n == 0) {
         new_node->next = list->head;
         list->head = new_node;
+        list ->size ++;
         return true;
     }
     
     if (n > list-> size){
-        cout << "Index inserted is larger than the list´s size -> proceeding to insert at the back of the list";
+        cout << "Index inserted is larger than the list´s size -> proceeding to insert at the back of the list \n";
         push_back(list,value);
         return true;
     }
@@ -86,7 +88,7 @@ bool insert(List* list, int value, int n) {
 
     new_node->next = current->next;
     current->next = new_node;
-
+    list ->size++;
     return true;
 }
 
@@ -103,7 +105,7 @@ bool erase(List* list , int n){
      }
 
      if(n >= list->size){        
-        cout << "The inserted index is larger than the list's size -> proceeding to delete the last item";
+        cout << "The inserted index is larger than the list's size -> proceeding to delete the last item \n";
         while (i < list->size-2){
             curr = curr -> next;
             i++;
@@ -148,28 +150,28 @@ int main(){
 
     push_back(&myList, 10);
     print_list(&myList);
-    push_back(&myList, 20);
+    push_front(&myList, 20);
     print_list(&myList);
     push_back(&myList, 30);
     print_list(&myList);
 
-    // cout << "List after inserting 10, 20, 30:" << endl;
-    // print_list(&myList);
-    // cout << endl;
+    cout << "List after inserting 10, 20, 30:" << endl;
+    print_list(&myList);
+    cout << endl;
 
-    // erase(&myList, 1);
-    // cout << "List after erasing index 1:" << endl;
-    // print_list(&myList);
-    // cout << endl;
+    erase(&myList, 1);
+    cout << "List after erasing index 1:" << endl;
+    print_list(&myList);
+    cout << endl;
 
-    // push_front(&myList, 5);
-    // cout << "List after pushing 5 to the front:" << endl;
-    // print_list(&myList);
-    // cout << endl;
+    push_front(&myList, 5);
+    cout << "List after pushing 5 to the front:" << endl;
+    print_list(&myList);
+    cout << endl;
 
-    // erase(&myList, 0);
-    // cout << "List after erasing index 0:" << endl;
-    // print_list(&myList);
-    // cout << endl;
+    erase(&myList, 0);
+    cout << "List after erasing index 0:" << endl;
+    print_list(&myList);
+    cout << endl;
 }
 

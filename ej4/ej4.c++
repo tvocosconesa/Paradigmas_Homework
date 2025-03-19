@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+#include <chrono>
+
+using namespace std;
+
+bool same_text(string t1, string t2, int i) {
+    if (i == t2.size()) return true;
+
+    if (t1.size() != t2.size()) return false;
+
+    if (t1[i] != t2[i]) return false;
+
+    return same_text(t1, t2, i + 1);
+}
+
+bool same_text(const char*t1, const char* t2 , int i){
+    if ( t1[i] == '\0' && t2[i] == '\0' ) return true;
+
+    if( t1[i] != t2[i]) return false;
+
+    return same_text(t1 , t2 , i + 1);
+}
+
+int main() {
+    // string t1 = "Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis ut in";
+    // string t2 = "Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis ut in";
+
+    const char* t1 = "Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis ut in";
+    const char* t2 = "Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis ut in";
+
+    // Medición del tiempo de ejecución
+    auto startTime = chrono::high_resolution_clock::now();
+    bool result = same_text(t1, t2, 0);
+    auto endTime = chrono::high_resolution_clock::now();
+
+    // Cálculo del tiempo transcurrido en nanosegundos
+    auto elapsedTime = chrono::duration_cast<chrono::nanoseconds>(endTime - startTime);
+
+    cout << "Resultado: " << result << "\n";
+    cout << "Tiempo de ejecución: " << elapsedTime.count() << " nanosegundos" << endl;
+
+    return 0;
+}

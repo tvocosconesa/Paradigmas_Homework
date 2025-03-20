@@ -1,5 +1,5 @@
 logysistem:
-	g++ -o punto1.exe Punto_1_Matriz.c++
-	valgrind --error-exitcode=1 --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./punto1.exe
-	rm punto1.exe
+	g++ -o ej1.exe ej1.c++
+	valgrind --error-exitcode=1 --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./ej1.exe
+	rm ej1.exe
 

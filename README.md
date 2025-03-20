@@ -1,11 +1,15 @@
 # Paradigmas_Homework
 
+# Ejecucion:
+los programas se ejecutan con el comando make en la terminal, siempre teniendo en cuenta que se este en el archivo deseado.
 
 # Ej 1:
 Para trabajar con la matriz de este punto decidi dividir el proceso en tres funciones: create_matrix - delete_matrix - print_matrix.
 - create_matrix: Esta funcion crea la matriz e inserta los numeros dentro de la misma.
 - print_matrix: En esta funcion imprimo los valores con el formato mostrado en la consigna. Para poder hacerloo con un solo ciclo for hice inicialice el for de manera decreciente con su iterador comenzando por el tamaño de la matriz menos 1. luego para el cuout utilicé las operaciones i/n y i%n para referirme a la fila y columna deseada respectivamente.
 - delete_matrix: Esta funcion recorre las filas de la matriz y las va eliminando una por una, luego termina por eliminar el puntero a la matriz en si.
+
+Cuando se ejecute el programa se le va a pedir por consola al usuario que inserte un numero N. Esta variable va a ser para determinar el tamaño de la matriz ( N x N )
 
 
 # Ej 2:

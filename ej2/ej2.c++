@@ -49,7 +49,8 @@ void logMessage(string Mensaje_De_Acceso, string Nombre_de_Usuario){
         cerr << "The file could not be opened" << endl;
         return; 
     }
-    file  << Nombre_de_Usuario << ':' << Mensaje_De_Acceso << endl;
+
+    file  << Nombre_de_Usuario << ": " << Mensaje_De_Acceso << endl;
     file.close();
 }
 
@@ -59,13 +60,16 @@ int main(){
     int action; 
     cout <<  "Insert your desired aciton:  \n 1) Send a message / report information \n 2) log-In in the system \n --> ";
     cin >> action;
+    cin.ignore();
     if (action == 1){    
         try {
             string message;
             int priority;
             
             cout << "Insert your priority number: ";
+    
             cin >> priority;
+            cin.ignore();
 
             if (priority < 1 || priority > 5) {
                 throw runtime_error("Invalid priority number");
@@ -106,8 +110,12 @@ int main(){
         string message;
         cout << "insert Your username: ";
         getline(cin,user);
-        cout << "Message ";
-        getline(cin, message);
+        // cout << "Message: ";
+        // getline(cin, message);
+
+        if (user == "Bjarne Stroustrup"){
+            message = "Access Granted";
+        }
 
         logMessage(message,user);
     }

@@ -14,26 +14,26 @@ using namespace std;
 //     return same_text(t1, t2, i + 1);
 // }
 
-bool same_text(const char*t1, const char* t2 , int i){
-    if ( t1[i] == '\0' && t2[i] == '\0' ) return true;
+// bool same_text(const char*t1, const char* t2 , int i){
+//     if ( t1[i] == '\0' && t2[i] == '\0' ) return true;
 
-    if( t1[i] != t2[i]) return false;
+//     if( t1[i] != t2[i]) return false;
 
-    return same_text(t1 , t2 , i + 1);
-}
-
-// constexpr bool same_text(const char* t1, const char* t2, int i = 0) {
-//     return (t1[i] == '\0' && t2[i] == '\0') ? true :
-//            (t1[i] != t2[i]) ? false :
-//            same_text(t1, t2, i + 1);
+//     return same_text(t1 , t2 , i + 1);
 // }
+
+constexpr bool same_text(const char* t1, const char* t2, int i = 0) {
+    return (t1[i] == '\0' && t2[i] == '\0') ? true :
+           (t1[i] != t2[i]) ? false :
+           same_text(t1, t2, i + 1);
+}
 
 int main() {
     // string t1 = "Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis ut in";
     // string t2 = "Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis ut in";
 
-    constexpr const char* t1 = "Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis ut in";
-    constexpr const char* t2 = "Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis ut in";
+    constexpr const char* t1 = "Lorem ipsum dolor sit amet consectetur adipiscing, elit tempor sodales natoque nunc, parturient sociosqu condimentum tempus et.";
+    constexpr const char* t2 = "Lorem ipsum dolor sit amet consectetur adipiscing, elit tempor sodales natoque nunc, parturient sociosqu condimentum tempus et.";
 
     // Medición del tiempo de ejecución
     auto startTime = chrono::high_resolution_clock::now();

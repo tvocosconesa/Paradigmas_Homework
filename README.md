@@ -13,6 +13,25 @@ Cuando se ejecute el programa se le va a pedir por consola al usuario que insert
 
 
 # Ej 2:
+### Como ejecutar:
+Este programa se maneja totalmente por la terminal y en base a una serie de opciones uno va a poder interactuar de diferentes maneras con las funciones Log_message. Al ejecutar el codigo a uno va a tener que tomar la decision de elegir entre dos opciones de operacion:
+    1. Redactar info / reportar un aviso:
+        En esta opcion uno va a tener que seleccionar una prioridad para asignarle a su mensaje. Las opciones de estas van a ser mostradas por la terminal. Una vez seleccionada su prioridad, introduciendo el numero correspondiente a su prioridad, uno va a poder escribir el mensaje que desea enviar al archivo log_system.txt .  
+    2. Iniciar sesion en el sistema:
+        Al usuario se le va a pedir que ingrese un nombre de usuario. En base a lo que el usuario ingrese el acceso se le va a ser otorgado o denegado. Este resultado va a ser registrado en el archivo log_system.txt . Hay solo un Nombre de usuario al cual se le otorga acceso, este es "Bjarne Stroustrup" 
+### funcionamiento:
+El programa tiene tres funciones Log_Message las cuales van a ser llamadas dependiendo del tipo de argumento el cual se les otorgue en el main. 
+    - void logMessage(string message, int n):
+        Esta es la mas generica de todas. tiene un switch el cual que en base al n que se le pasa selecciona una prioridad. Una vez seleccionada la prioridad esta es asignada como argumento de la funcion create_message. Esta funcion luego procede a ingresar en el archivo txt el mensaje junto con su prioridad
+    - void logMessage( string Mensage_de_Error, string Archivo, int Línea_de_Código):
+        Si uno selecciona la prioridad 4 (ERROR) uno va a tener que pasar por terminal los datos correspondientes a los argumentos de esta funcion. Una vez hecho esto la funcion procede a enviar el mensaje al txt diciendo que en el tal archivo ha un error en la linea x, y junto con esto se deja el mensaje de descripción del error.
+    - void logMessage(string Mensaje_De_Acceso, string Nombre_de_Usuario):
+        Finalmente esta es la funcion para cuando se selecciona la opcion de iniciar sesion en el sistema. Si el nombre ingresado coincide con el username habilitado (Bjarne Stroustrup) en el archivo txt aparecera que el accesoo fue otorgado al usuario. Por lo contrario en el txt aparecera que este fue denegado.
+
+En el main de la función es que al usuario se le piden los datos para las funciones. En el caso de que el numero de prioridad ingresado no coincida con las opciones posibles, aparecera en el archivo txt un mensaje del tipo ERROR en el que se avisara de que dicho numero es invalido.
+
+
+
 
 
 # Ej 3:
@@ -21,10 +40,13 @@ En mi main opte por poner algunos ejemplos de inserciones y eliminaciones de ele
 
 
 # Ej 4:
-En este punto creo una funcion recursiva la cual verifique si es que dos textos son iguales. En total hice 3 versiones de esta funcion, una con strings, una con const char * y finalmente una la cual compara los textos en tiempo de compilado.
+En este punto creo una funcion recursiva la cual verifique si es que dos textos son iguales. En total hice 3 versiones de esta funcion, una con strings, una con const char* y finalmente una la cual compara los textos en tiempo de compilado. 
+En el archivo se encuentran todas las etapas de esta funcion. La que no esta comentada es la mas eficiente en tiempo de ejecución. Asimismo en el main esta la posibilidad de utilizar los mismos textos bajo otro tipo de variable para probar las otras funciones.
+
     En un principio compare las dos funciones que se ejecutan totalmente en tiempo de ejecución. Entre ellas pude comprobar que
 la funcion con const char* fue considerablemente mas rapida que la de string. Esto se debe a que la funcion const char* accede de manera directa a las distintas posiciones de memoria como si fueran un array. por otro lado, ingagando mas profundamente, leí que el string usa una capa adicional para gestionar memoria y ademas tiene verificaciones internas. Como el string no modifica el acceso a memoria es mas seguro en cierto sentido, pero siendo que el char * que utilicé es const uno no deberia preocuparse de algun tipo de cambio indeseado en la memoria. 
     Por el lado de la funcion que compara en tiempo de compilado, esta resulto todavia mas eficiente que la const char*. utilicé 
 la declaracion constexpr para las variables de texto y la funcion que compara. De esta manera puse comparar los textos en tiempo de compilado y como consecuencia el tiempo de ejecución fue casi 5 veces menos que el del const char*.
+
 
 En conclusion en cuanto al tiempo de ejecucion, la funcion mas eficiente es l que utiliza const char* sumado aconstexpr para  correr hacer la comparacion en timpo de compilado. Esto se debe a la combinacion de acceso a memori mas directo y la posibilidad de commparar en la compilacion.

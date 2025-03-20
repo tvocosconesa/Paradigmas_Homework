@@ -4,7 +4,7 @@
 using namespace std;
 
 
-void create_file(string message, string tag) {
+void create_message(string message, string tag) {
     ofstream file("log_system.txt", ios::app);
     if (!file) { 
         cerr << "The file could not be opened" << endl;
@@ -29,7 +29,7 @@ void logMessage(string message, int n){
         case 5: tag = "[CRITICAL]"; break;
         default: tag = "[UNKNOWN]"; break;
     }
-    create_file(message, tag);
+    create_message(message, tag);
 }
 
 void logMessage( string Mensage_de_Error, string Archivo, int Línea_de_Código){
@@ -50,7 +50,7 @@ void logMessage(string Mensaje_De_Acceso, string Nombre_de_Usuario){
         return; 
     }
 
-    file  << Nombre_de_Usuario << ": " << Mensaje_De_Acceso << endl;
+    file  << "[SECURITY] " << Nombre_de_Usuario << ": " << Mensaje_De_Acceso << endl;
     file.close();
 }
 
@@ -66,7 +66,7 @@ int main(){
             string message;
             int priority;
             
-            cout << "Insert your priority number: ";
+            cout << "Priority number Menu: \n 1) [DEBUG] \n 2) [INFO] \n 3) [WARNING] \n 5) [ERROR] \n 6) [CRITICAL] \n 7) [UNKNOWN] \n Insert your priority number ------> ";
     
             cin >> priority;
             cin.ignore();
@@ -100,9 +100,9 @@ int main(){
             logMessage(message, priority);
             }
         } catch (const exception& e) {
-            logMessage(e.what(), 4);  // Se guarda en el log como ERROR
+            logMessage(e.what(), 4);  
             cerr << "Runtime error: " << e.what() << endl;
-            return 1;  // Se detiene el programa con código de error
+            return 1;  
         }
     }
     else{
@@ -110,11 +110,12 @@ int main(){
         string message;
         cout << "insert Your username: ";
         getline(cin,user);
-        // cout << "Message: ";
-        // getline(cin, message);
 
         if (user == "Bjarne Stroustrup"){
             message = "Access Granted";
+        }
+        else{
+            message = "Access Denied";
         }
 
         logMessage(message,user);

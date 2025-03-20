@@ -35,12 +35,10 @@ int main() {
     constexpr const char* t1 = "Lorem ipsum dolor sit amet consectetur adipiscing, elit tempor sodales natoque nunc, parturient sociosqu condimentum tempus et.";
     constexpr const char* t2 = "Lorem ipsum dolor sit amet consectetur adipiscing, elit tempor sodales natoque nunc, parturient sociosqu condimentum tempus et.";
 
-    // Medición del tiempo de ejecución
     auto startTime = chrono::high_resolution_clock::now();
     bool result = same_text(t1, t2, 0);
     auto endTime = chrono::high_resolution_clock::now();
 
-    // Cálculo del tiempo transcurrido en nanosegundos
     auto elapsedTime = chrono::duration_cast<chrono::nanoseconds>(endTime - startTime);
 
     cout << "Resultado: " << result << "\n";

@@ -23,12 +23,11 @@ int ** create_matrix(int n){
 void print_matrix(int ** matrix, int n){
     for (int i = (n*n)-1; i >= 0 ; i--){
         
-        cout << "[" + to_string(i/n) + "]["+ to_string(i%n) +"] = " <<matrix[i/n][i%n] <<  endl;
-        
+        cout << '[' << i/n << "][" << i%n << "] = " << matrix[i/n][i%n] << endl;
     }
 }
 
-void deleteMatrix(int** matrix, int n) {
+void delete_matrix(int** matrix, int n) {
     
     for (int i = 0; i < n; i++) {
         delete[] matrix[i];
@@ -44,5 +43,5 @@ int main(){
 
     int ** matrix = create_matrix(n);
     print_matrix(matrix,n);
-    deleteMatrix(matrix,n);
+    delete_matrix(matrix,n);
 }

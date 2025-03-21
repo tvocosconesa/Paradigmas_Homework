@@ -1,8 +1,4 @@
-#include <iostream>
-#include <string>
-#include <chrono>
-
-using namespace std;
+#include "ej4.h"
 
 // bool same_text(string t1, string t2, int i) {
 //     if (i == t2.size()) return true;
@@ -29,8 +25,13 @@ constexpr bool same_text(const char* t1, const char* t2, int i = 0) {
 }
 
 int main() {
+    
     // string t1 = "Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis ut in";
     // string t2 = "Lorem ipsum dolor sit amet consectetur adipiscing elit iaculis ut in";
+
+    // const char* t1 = "Lorem ipsum dolor sit amet consectetur adipiscing, elit tempor sodales natoque nunc, parturient sociosqu condimentum tempus et.";
+    // const char* t2 = "Lorem ipsum dolor sit amet consectetur adipiscing, elit tempor sodales natoque nunc, parturient sociosqu condimentum tempus et.";
+
 
     constexpr const char* t1 = "Lorem ipsum dolor sit amet consectetur adipiscing, elit tempor sodales natoque nunc, parturient sociosqu condimentum tempus et.";
     constexpr const char* t2 = "Lorem ipsum dolor sit amet consectetur adipiscing, elit tempor sodales natoque nunc, parturient sociosqu condimentum tempus et.";

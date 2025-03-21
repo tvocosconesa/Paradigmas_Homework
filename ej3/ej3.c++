@@ -1,22 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <fstream>
-#include <memory>
-using namespace std;
-
-struct Node{
-    
-        int value;
-        shared_ptr<Node> next;
-};
-
-struct List{
-        size_t  size;
-        shared_ptr<Node> head;
-        shared_ptr<Node> tail;
-};
-
+#include "ej3.h"
 
 shared_ptr<Node> create_node(int n){
     shared_ptr<Node> new_node = make_shared<Node>();

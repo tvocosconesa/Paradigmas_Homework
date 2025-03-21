@@ -1,7 +1,4 @@
-#include <iostream>
-#include <string>
-#include <fstream>
-using namespace std;
+#include "ej2.h"
 
 
 void create_message(string message, string tag) {
@@ -66,7 +63,7 @@ int main(){
             string message;
             int priority;
             
-            cout << "Priority number Menu: \n 1) [DEBUG] \n 2) [INFO] \n 3) [WARNING] \n 5) [ERROR] \n 6) [CRITICAL] \n 7) [UNKNOWN] \n Insert your priority number ------> ";
+            cout << "Priority number Menu: \n 1) [DEBUG] \n 2) [INFO] \n 3) [WARNING] \n 4) [ERROR] \n 5) [CRITICAL] \n 6) [UNKNOWN] \n Insert your priority number ------> ";
     
             cin >> priority;
             cin.ignore();
@@ -76,7 +73,6 @@ int main(){
             }
 
             if (priority == 4){
-                cin.ignore();
                 string file_name;
                 int line;
 

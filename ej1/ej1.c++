@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <string>
-using namespace std;
+#include "ej1.h"
 
 
 int ** create_matrix(int n){

@@ -9,7 +9,7 @@ Los programas se ejecutan con el comando `make` en la terminal, siempre asegurá
 Para trabajar con la matriz de este punto, dividí el proceso en tres funciones:
 
 - **`create_matrix`**: Crea la matriz e inserta los números en ella.
-- **`print_matrix`**: Imprime la matriz con el formato requerido en la consigna. Para hacerlo con un solo ciclo `for`, inicialicé el iterador en `N*N - 1` y lo recorrí de forma decreciente. Luego usé las operaciones `i / N` y `i % N` para referirme a la fila y columna correspondiente a la hora de hacer el cout.
+- **`print_matrix`**: Imprime la matriz con el formato requerido en la consigna. Para hacerlo con un solo ciclo `for`, inicialicé el iterador en `N*N - 1` y hice que avanzara de forma decreciente. Luego usé las operaciones `i / N` y `i % N` para referirme a la fila y columna correspondiente a la hora de hacer el cout.
 - **`delete_matrix`**: Recorre las filas de la matriz y las elimina una por una. Finalmente, libera el puntero de la matriz.
 
 Cuando se ejecuta el programa, se le pide al usuario que ingrese un número `N`, el cual determina el tamaño de la matriz (`N x N`).
@@ -50,11 +50,12 @@ En el `main`, se solicitan los datos para las funciones `Log_message` y, si la p
 ---
 
 ## Ejercicio 3
-En este punto, implemento una **lista simplemente enlazada** con sus primitivas. Adicionalmente, creé una función auxiliar `create_node` para evitar la repetición de código al crear nodos.
+En este punto, implemento una **lista simplemente enlazada** con sus primitivas. Los indices de la lista comienzan en `0`, pero el size de la misma indica la cantidad de elementos, por lo tanto este va a corresponder con el ultimo indice mas uno.Adicionalmente, creé una función auxiliar `create_node` para evitar la repetición de código al crear nodos. Asimismo para reutilizar codigo utilicé el `push_front` y `push_back` para sus respectivos casos en el caso de utilizar la funcion `insert`
 
 Utilicé exclusivamente **smart pointers**, particularmente `shared_ptr`, ya que permiten compartir el ownership de un nodo sin necesidad de usar `move` para cambiarla. Esto me facilitó bastante la manipulación de punteros al insertar, reasignar roles o acceder a nodos auxiliares.
 
-En `main`, incluí ejemplos de inserción y eliminación de nodos, con impresiones del estado de la lista luego de cada operación.
+
+En `main`, incluí ejemplos de inserción y eliminación de nodos, con impresiones que van mostrando el estado de la lista luego de cada operación.
 
 ---
 
@@ -65,7 +66,7 @@ Este ejercicio consiste en una función recursiva que verifica si dos textos son
 2. **Con `const char*`**
 3. **Con Comparación en tiempo de compilación: `constexpr const char*`**
 
-Todas las versiones están en el archivo, la que no está comentada es la más eficiente en tiempo de ejecución. En el caso de querer ejecutar alguna de las otras uno tiene que descomentar la funcion deseada y su respectivo header en el archivo `ej4.h`
+Todas las versiones están en el archivo, la que no está comentada es la más eficiente en tiempo de ejecución. En el caso de querer ejecutar alguna de las otras uno tiene que descomentar la funcion deseada, sus variables en el mail y su respectivo header en el archivo `ej4.h`
 
 ### Comparación de eficiencia
 - **`const char*` vs `string`**

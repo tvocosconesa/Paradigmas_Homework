@@ -1,2 +1,0 @@
-[WARNING]<OH NO!>
-[ERROR]<Invalid priority number>

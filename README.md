@@ -1,7 +1,8 @@
 # Paradigmas_Homework
 
 ## Ejecución
-Los programas se ejecutan con el comando `make` en la terminal, siempre asegurándose de estar en el directorio correcto.
+Los programas se ejecutan con el comando `make` en la terminal, siempre asegurándose de estar en la direccion correcta.
+Los ejercicios los cuales considere que ameritaban tienen un `Valgrind` con el que se puede ver si hay leaks.
 
 ---
 
@@ -50,7 +51,7 @@ En el `main`, se solicitan los datos para las funciones `Log_message` y, si la p
 ---
 
 ## Ejercicio 3
-En este punto, implemento una **lista simplemente enlazada** con sus primitivas. Los indices de la lista comienzan en `0`, pero el size de la misma indica la cantidad de elementos, por lo tanto este va a corresponder con el ultimo indice mas uno.Adicionalmente, creé una función auxiliar `create_node` para evitar la repetición de código al crear nodos. Asimismo para reutilizar codigo utilicé el `push_front` y `push_back` para sus respectivos casos en el caso de utilizar la funcion `insert`
+En este punto, implemento una **lista simplemente enlazada** con sus primitivas. Los indices de la lista comienzan en `0`, pero el size de la misma indica la cantidad de elementos, por lo tanto este va a corresponder con el ultimo indice mas uno. Adicionalmente, creé una función auxiliar `create_node` para evitar la repetición de código al crear nodos. Asimismo para reutilizar codigo utilicé el `push_front` y `push_back` para sus respectivos casos en el caso de utilizar la funcion `insert`
 
 Utilicé exclusivamente **smart pointers**, particularmente `shared_ptr`, ya que permiten compartir el ownership de un nodo sin necesidad de usar `move` para cambiarla. Esto me facilitó bastante la manipulación de punteros al insertar, reasignar roles o acceder a nodos auxiliares.
 
